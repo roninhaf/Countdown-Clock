@@ -1,3 +1,5 @@
+"use strict";
+
 let countdown;
 const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
@@ -50,9 +52,9 @@ function startTimer() {
 
 }
 
-buttons.forEach(a => a.addEventListener('click' , startTimer));
-document.customForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+buttons.forEach(button => button.addEventListener('click' , startTimer));
+document.customForm.addEventListener('submit', function(event) {
+    event.preventDefault();
     const mins = this.minutes.value;
     timer(mins * 60);
     this.reset();
